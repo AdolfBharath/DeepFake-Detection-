@@ -1,4 +1,15 @@
-# Deepfake Detector (EfficientNet-B5)
+# Deepfake Detector (EfficientNet‑B5)
+
+![CI](https://github.com/AdolfBharath/DeepFake-Detection-/actions/workflows/python-ci.yml/badge.svg)
+
+A complete image/video deepfake detector using EfficientNet‑B5. It classifies inputs as Real or Fake, with training, evaluation, and a polished Gradio UI.
+
+**Highlights**
+- EfficientNet‑B5 backbone with transfer learning
+- Image + Video inference (frame sampling and aggregation)
+- Decision modes: threshold or argmax
+- Calibrated threshold and ROC/AUC evaluation
+- Modern UI with styled results and probability charts
 
 A complete image-based deepfake detector using EfficientNet-B5. It classifies images as Real or Fake and includes training, inference, and a local Gradio UI.
 
@@ -121,6 +132,25 @@ Arguments:
 After extraction, you can split into train/val using your existing dataset preparation script or manually arrange into the expected directory structure.
 
 ### Video Inference
+## Project Structure
+
+```
+deepfake_detector/
+├── artifacts/              # metrics, curves, threshold
+├── evaluation/             # ROC/AUC, threshold calibration
+├── inference/              # predict.py (image & video)
+├── models/                 # saved checkpoints
+├── training/               # training script
+├── ui/                     # Gradio app
+├── utils/                  # dataset utilities
+└── requirements.txt
+```
+
+## CI
+
+GitHub Actions runs a Python CI on push/PR: installs dependencies, compiles sources for syntax, and performs smoke imports.
+
+## Notes
 
 You can upload a video directly in the UI (Video tab). The app samples N evenly spaced frames, runs the image model per frame, and aggregates probabilities (mean). The final label is chosen by your decision mode:
 
