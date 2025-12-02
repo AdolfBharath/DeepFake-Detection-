@@ -173,6 +173,30 @@ print(out)  # {'real': 0.53, 'fake': 0.47, 'frames_used': 8, 'per_frame_real': [
 - Augmentation: Light augmentations (flip, rotate, zoom, contrast, brightness jitter) are applied to training data.
 - Preprocessing: Images are resized to the chosen `--image_size` and normalized with EfficientNet preprocessing.
 
+## Deployment
+
+The application can be deployed using several methods:
+
+### Quick Start (Local)
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+### Docker
+
+```bash
+docker build -t deepfake-detector .
+docker run -p 7860:7860 -v $(pwd)/models:/app/deepfake_detector/models:ro deepfake-detector
+```
+
+### Hugging Face Spaces
+
+Upload `app.py`, `requirements.txt`, and your trained model to a new Gradio Space.
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## License
 
 For educational and research purposes. Provide your own dataset and ensure you have rights to use it.
