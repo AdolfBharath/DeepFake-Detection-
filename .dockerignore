@@ -1,0 +1,52 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+*.egg
+
+# IDE/Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Datasets (not needed for inference)
+dataset/
+dataset_faces/
+dataset_faces_all/
+downloads/
+raw/
+
+# Videos (examples, not needed)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Logs
+logs/
+*.log
+
+# Documentation (optional, can include if needed)
+*.md
+!README.md
+
+# GitHub
+.github/
+
+# Test files
+tests/
+*_test.py
+test_*.py
