@@ -4,6 +4,11 @@ Hugging Face Spaces entry point for Deepfake Detector.
 This file serves as the main entry point for Hugging Face Spaces deployment.
 It provides the same functionality as the main app but with imports adjusted
 for the Spaces environment.
+
+NOTE: This file intentionally duplicates code from inference/predict.py and ui/app.py
+to create a standalone, self-contained entry point that works on Hugging Face Spaces
+without requiring the full module structure. This is a common pattern for Spaces
+deployments where the app.py file must be self-contained.
 """
 
 import os
